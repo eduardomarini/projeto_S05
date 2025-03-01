@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard App Inatel</title>
+    <style>
+        /* Reset de estilos padrões */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo do documento */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Cor de fundo para o corpo */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Cabeçalho */
+        .header {
+            background-color: #4CAF50; /* Cor de fundo para o cabeçalho */
+            color: white;
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-content img {
+            height: 40px; /* Tamanho do logo */
+        }
+
+        .header h1 {
+            font-size: 1.5rem;
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr; /* 1 coluna para telas menores */
+            gap: 16px; /* Espaçamento entre os elementos */
+            padding: 16px;
+            flex-grow: 1;
+            background-color: #fff;
+        }
+
+        .main-section {
+            background-color: #e0e0e0; /* Cor de fundo para as seções */
+            padding: 16px;
+            border-radius: 8px;
+        }
+
+        /* Barra Lateral */
+        .sidebar {
+            background-color: #333;
+            color: white;
+            padding: 16px;
+            display: none; /* Inicialmente oculta em dispositivos pequenos */
+            flex-shrink: 0;
+            width: 200px; /* Largura fixa para a barra lateral */
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            margin: 8px 0;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 16px;
+            text-align: center;
+        }
+
+        /* Layout Responsivo */
+        @media (min-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr 3fr; /* 2 colunas para telas maiores, barra lateral + conteúdo */
+            }
+
+            .sidebar {
+                display: block; /* Exibe a barra lateral em telas maiores */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .sidebar {
+                display: none; /* Esconde a barra lateral em telas pequenas */
+            }
+
+            .main-content {
+                padding: 8px; /* Menos espaçamento para telas pequenas */
+            }
+
+            .main-section {
+                margin-bottom: 16px; /* Espaçamento entre as seções */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-content">
+            <img src="logo.png" alt="Logo do App Inatel">
+            <h1>Dashboard</h1>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <section class="main-section">
+            <h2>Seção de Conteúdo</h2>
+            <p>Este é o conteúdo principal da página.</p>
+        </section>
+        <section class="main-section">
+            <h2>Outra Seção</h2>
+            <p>Mais conteúdo interativo e dinâmico.</p>
+        </section>
+    </main>
+
+    <!-- Barra Lateral -->
+    <aside class="sidebar">
+        <ul>
+            <li><a href="#">Menu Item 1</a></li>
+            <li><a href="#">Menu Item 2</a></li>
+            <li><a href="#">Menu Item 3</a></li>
+        </ul>
+    </aside>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <p>&copy; 2025 App Inatel. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
