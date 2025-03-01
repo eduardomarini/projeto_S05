@@ -1,0 +1,52 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.header {
+    background-color: #f4f4f4;
+    padding: 24px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mensagens, .aulas, .noticias {
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.mensagens { background-color: #d1e7dd; }
+.aulas { background-color: #cfe2ff; }
+.noticias { background-color: #f8d7da; }
+
+@media (min-width: 414px) {
+    .main {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .mensagens, .aulas, .noticias {
+        flex: 1 1 calc(50% - 16px);
+        max-width: 200px;
+    }
+}
+
+@media (min-width: 768px) {
+    .mensagens, .aulas, .noticias {
+        flex: 1 1 calc(33.33% - 16px);
+    }
+}
